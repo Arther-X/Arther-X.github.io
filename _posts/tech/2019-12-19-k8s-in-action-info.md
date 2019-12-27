@@ -17,6 +17,22 @@ Docker
 Kubernetes
 microservice
 
+在保守 Borg 和 Omega 秘密数十年之后， 2014 年 ， 谷歌开放了 Kubernetes, 个基于Borg、 Omega及其他谷歌内部系统实践的开源系统。
+Kubernetes 是 一 个软件系统，它允许你在其上很容易地 部署 和 管理容器应用
+
+master
+主节点 ，它承载着 Kubernetes控制和管理整个集群系统的控制面板
+    Kubernets API服务器
+    Scheculer
+    Controller Manager
+    etcd
+
+worker
+工作节点，它们运行用户实际部署的应用
+    Docker or rtk
+    Kubelet
+    Kubernets Service Proxy(kube-proxy)
+
 2019-12-22
 这两天快圣诞，除了做一些h3相关的以及google api的研究以外，都没怎么顾得上。
 明天开始就有时间了
