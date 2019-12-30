@@ -14,7 +14,7 @@ Go101阅读笔记 -- 简介
 
 Go属于编译型的静态语言,但是Go的很多特性使得用Go编程像使用动态脚本语言一样的灵活。
 
-Go标准编译器 - gc (是Go compiler的缩写，不是垃圾回收garbage collection的缩写)
+Go标准编译器 - gc (是Go compiler的缩写，不是垃圾回收garbage collection的缩写)，支持跨平台编译
 PS: 官方还有维护另一个编译器，gccgo
 
 Go语言的一些特性
