@@ -29,6 +29,16 @@ break、case、continue、default、else、fallthrough、for、goto、if、range
 4)
 defer和go也可以看作是流程控制关键字， 但它们有一些特殊的作用。详见协程和延迟函数调用。
 
+基本内置类型
+布尔型: bool
+字符串: string
+11种内置整数类型:
+    int8、uint8(byte)、int16、uint16、int32(rune)、uint32、int64、uint64、
+    int、uint和uintptr。
+2种内置浮点数类型:
+    float32和float64。
+2种内置复数类型:
+    complex64和complex128。
 
 
 
