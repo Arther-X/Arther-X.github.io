@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Go 101
+title: Go101阅读笔记 -- 简介
 category: 读书
 keywords: 阅读,书单
 ---
