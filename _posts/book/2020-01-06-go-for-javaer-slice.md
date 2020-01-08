@@ -57,4 +57,32 @@ data  | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
  s3                               | 7 | 8 | x |     error: slice bounds out of range
                                   +---+---+---+
 
+slice使用
+slice := []int{1, 2, 3, 4, 5}
+fmt.Println(slice[4])   // 5
+slice[0] = 100
+fmt.Println(slice)      // [100,2,3,4,5]
+
+追加
+newSlice := append(slice, 6, 7, 8)
+fmt.Println(newSlice)
+
+
+copy
+data := [...]int{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+s := data[8:]     // [8,9]
+s2 := data[:5]    // [8,9,2,3,4]
+copy(s2, s)       // [8,9,2,3,4,5,6,7,8,9]
+
+扩容
+s := make([]int, 0, 1)
+c := cap(s)
+for i := 0; i < 50; i++ {
+	s = append(s, i)
+	if n := cap(s); n > c {
+		fmt.Printf("cap: %d -> %d \n", c, n)  // 2倍速扩容
+		c = n
+	}
+}
+
 
