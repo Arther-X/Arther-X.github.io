@@ -14,10 +14,21 @@ package main
 import "fmt"
 import "math/rand"
 
+// 一条包引入语句引入了三个代码包。
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
 
 func main() {
 	fmt.Println("Go has", 25, "keywords.")
+
     fmt.Printf("下一个伪随机数总是%v。\n", rand.Uint32())
+
+    rand.Seed(time.Now().UnixNano()) // 设置随机数种子
+	fmt.Printf("下一个伪随机数总是%v。\n", rand.Uint32())
 
 }
 ```
@@ -29,3 +40,9 @@ fmt.Println函数调用接受任意数量的实参并且对实参的类型没有
 
 math/rand标准库包的引入名是rand。 rand.Uint32()函数调用将返回一个uint32类型的随机数。
 Printf函数是fmt标准库包中提供的另外一个常用终端打印函数。 一个Printf函数调用必须带有至少一个实参，并且第一个实参的类型必须为string。 此第一个实参指定了此调用的打印格式。此格式中的%v在打印结果将被对应的后续实参的字符串表示形式所取代。 比如上列中的%v在打印结果中将被rand.Uint32()函数调用所返回的随机数所取代。 打印格式中的\n表示一个换行符，这在基本类型和它们的字面量表示一文中已经解释过。
+
+time标准库包。 此包提供了很多和时间相关的函数和类型。 其中time.Time和time.Duration是两个最常用的类型。
+函数调用time.Now()将返回一个表示当前时间的类型为time.Time的值。
+UnixNano是类型time.Time的一个方法。 我们可以把方法看作是特殊的函数。方法将在Go中的方法一文中详述。 方法调用aTime.UnixNano()将返回从UTC时间的1970年一月一日到aTime所表示的时间之间的纳秒数。 返回结果的类型为int64。 在上例中，此方法调用的结果用来设置随机数种子。
+
+
